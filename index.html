@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Aurora</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <h1>¡BIENVENIDOS A TU CAFE AURORA!</h1>
+    <div class="formulario" id="formulario">
+        <fieldset>
+            <form method="post" action="procesar.php">
+                <legend><h2>Formulario de pedidos <br> Cafe Aurora</h2></legend>
+
+                <label for="nombre">Nombre del cliente: </label>
+                <input name="nombre" type="text" placeholder="juan perez" required/><br>
+
+                <label for="email">Correo electronico: </label>
+                <input name="email" type="email" placeholder="ejemplo@email.com" required/><br>
+
+                <label for="telefono">Telefono: </label>
+                <input name="telefono" type="tel" inputmode="numeric" pattern="[0-9\s\-]+" placeholder="+57 310 000 0000" required oninput="this.value = this.value.replace(/[^0-9\s\-]/+, '')"/><br>
+
+               <label for="cafe">Tipo de Cafe: </label>
+               <select  name="cafe"  id="cafe" required>
+                <option value="">Selecione...</option>
+                <option value="Espresso">Espresso</option>
+                <option value="Latte">Latte</option>
+                <option value="Capucchino">Capucchino</option>
+                <option value="Americano">Americano</option>
+               </select>                          
+                                          
+               <p>Tamaño del Cafe: </p>
+
+                <input name="tamano" id="tamano1"  type="radio" value="pequeño" required />
+                <label for="tamano1">Pequeño</label>
+
+                <input name="tamano" id="tamano2"  type="radio" value="mediano" />
+                <label for="tamano2">Mediano</label>
+
+                <input name="tamano" id="tamano3"  type="radio" value="grande" />
+                <label for="tamano3">Grande</label>
+
+                <p>Extras:</p>
+
+                <input type="checkbox" name="extras[]" value="Leche deslactosada">Leche deslactosada<br>
+                <input type="checkbox" name="extras[]" value="Azucar morena">Azucar morena<br>
+                <input type="checkbox" name="extras[]" value="Canela">Canela<br>
+                <input type="checkbox" name="extras[]" value="Chocolate">Chocolate<br>
+
+
+                <label for="pago">Metodo de pago:</label>
+                <select name="pago" id="pago" required>
+                 <option value="">Selecione...</option>   
+                 <option value="Efectivo">Efectivo</option>   
+                 <option value="Tarjeta">Tarjeta</option>
+                 <option value="Transferencia">Transferencia</option>
+                </select> 
+                    <br>
+
+                <label for="comen">Comentarios adicionales:</label><br>
+
+                <textarea cols="25" rows="8" name="comen" id="comen" placeholder="Escribe aqui...."></textarea><br>
+
+              <button type="submit">Realizar Pedido</button>
+            </form>
+        </fieldset>
+    </div>
+</body>
+</html>
