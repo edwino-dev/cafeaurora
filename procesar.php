@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Por favor completa todos los campos obligatorios.";
     
     } else {
-        // Sanitizar entradas
+        
         $nombre   = htmlspecialchars($_POST['nombre']);
         $email    = htmlspecialchars($_POST['email']); // ojo: aquí debe coincidir con el name del formulario
         $telefono = htmlspecialchars($_POST['telefono']);
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $extras = isset($_POST['extras']) ? implode(", ", $_POST['extras']) : "sin extras";
 
-        // Mostrar pedido
+    
         echo "Pedido de café Aurora";
         echo "<p>Cliente: $nombre</p>";
         echo "<p>Email: $email</p>";
